@@ -1,0 +1,18 @@
+.line {
+    display: flex;
+    border: black 3px;
+    background-color: blue;
+    height: 20px;
+    justify-content: center;
+}
+
+.square {
+    border: black 2px;
+    height: 10px;
+    margin: 1px;
+}
+
+#container {
+    border: black 10px;
+    background-color: ;
+}

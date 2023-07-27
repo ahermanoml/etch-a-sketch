@@ -1,5 +1,8 @@
 let button = document.querySelector('#reset')
-let  container = document.querySelector("#container");
+let  container = document.createElement('div');
+container.classList.add('container');
+document.body.appendChild(container);
+
 
 function drawGrid () {
     for (let i =0; i < 16; i++) {
@@ -19,15 +22,14 @@ function drawGrid () {
 
 drawGrid();
 
-let newContainer;
 
 button.addEventListener("click", function () {
     let userNumber = prompt('Choose the size of the grid');
     if (userNumber == 10) {
         container.remove();
-        newContainer = document.createElement('div');
-        document.body.appendChild(newContainer)
-        newContainer.class = 'newContainer';
+        container = document.createElement('div');
+        container.classList.add("container")
+        document.body.appendChild(container)
         for (let i =0; i < 16; i++) {
             let lineDiv = document.createElement("div");
                 for (let j =0; j < 16; j++) {
@@ -39,7 +41,7 @@ button.addEventListener("click", function () {
                 lineDiv.appendChild(square)
                 }
             lineDiv.classList.add("line")
-            newContainer.appendChild(lineDiv)
+            container.appendChild(lineDiv)
             }
     }
 });
